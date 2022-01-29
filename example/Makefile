@@ -7,11 +7,12 @@ AR      := /usr/bin/i686-w64-mingw32-ar
 STRIP   := /usr/bin/i686-w64-mingw32-strip
 WINDRES := /usr/bin/i686-w64-mingw32-windres
 
-INCS    := -Iinc -Icurl/inc
+INCS    := -Iinc -Icurl-7.81.0-win32-mingw/include
 CFLAGS  := -Wall -O2
 DFLAGS  :=
 GUIOPT  := -municode -mwindows
-LFLAGS  := -static-libgcc -static-libstdc++ -Lcurl/lib -lcurl
+LFLAGS  := -static-libgcc -static-libstdc++ -Lcurl-7.81.0-win32-mingw/bin -lcurl
+
 
 OBJECTS := $(patsubst %.cpp,${OUTPUT}/%.o,$(wildcard src/*.cpp))
 RES     := $(patsubst %.rc,${OUTPUT}/%.res,$(wildcard res/*.rc))
